@@ -46,11 +46,22 @@
           </v-list-tile>
         </template>
       </v-list>
+
     </v-navigation-drawer>
-    <v-toolbar color="blue darken-4" dark app absolute clipped-left>
+    <v-toolbar color="blue darken-4" dark app fixed clipped-left>
       <v-toolbar-side-icon @click.native="drawer = !drawer"></v-toolbar-side-icon>
       <span class="title ml-3 mr-5">BILD&nbsp;<span class="font-weight-light">Lethbridge</span></span>
       <v-spacer></v-spacer>
+      <v-list class="blue darken-4">
+        <v-list-tile @click="logout">
+          <v-list-tile-title>
+          <form action="/logout" method="post" class="text-xs-right mr-2">
+            <input type="hidden" name="_token" :value="token">
+            <button type="submit"><v-icon>lock_open</v-icon> Logout</button>
+          </form>
+          </v-list-tile-title>
+        </v-list-tile>
+      </v-list>
     </v-toolbar>
     <v-content>
       <!-- For showing user alerts and feedback -->

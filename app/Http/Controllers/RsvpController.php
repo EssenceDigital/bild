@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 use App\Guest;
 use App\Http\Requests\SaveRsvp;
-use App\Http\Requests\UpdateRsvp;
 
 class RsvpController extends Controller
 {
@@ -69,34 +68,6 @@ class RsvpController extends Controller
       // Return success if everything worked
       return response()->json([
           'result' => 'success'
-      ], 200);
-
-    }
-
-    /**
-  	 * Send an RSVP
-  	 *
-  	 * @param  UpdateRvsp $request
-  	 * @return JSON Response
-  	*/
-    public function update(UpdateRsvp $request)
-    {
-      // Start booking
-  		$guest = Guest::findOrFail($request->id);
-  		// Fill booking
-  		$guest->fill($request->toArray());
-  		// Save booking
-  		if(! $guest->save()){
-  			// Return error is save didnt work
-        return response()->json([
-            'result' => 'error'
-        ], 404);
-  		}
-
-      // Return success if everything worked
-      return response()->json([
-          'result' => 'success',
-          'rsvp' => $guest
       ], 200);
 
     }

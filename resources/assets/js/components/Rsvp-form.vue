@@ -7,6 +7,8 @@
             label="Name"
             v-model="form.name.value"
             :error-messages="form.name.errors"
+            hint="Personal or company name"
+            persistent-hint
           ></v-text-field>
         </v-flex>
         <v-flex xs12 lg6>
@@ -14,6 +16,8 @@
             label="Email"
             v-model="form.email.value"
             :error-messages="form.email.errors"
+            hint="For ticket invoicing and contact"
+            persistent-hint
           ></v-text-field>
         </v-flex>
       </v-layout>
