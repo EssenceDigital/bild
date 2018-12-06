@@ -27,9 +27,10 @@ class SaveRsvp extends FormRequest
             'name' => 'required|max:65',
             'email' => 'required|email',
             'rsvp' => 'required|max:10',
-            'tickets' => 'max:10',
-            'dietary' => 'max:125',
-            'additional' => 'max:125',
+            'tickets' => 'max:100',
+            'drink_tickets' => 'max:100',
+            'dietary' => 'max:255',
+            'additional' => 'max:255',
             'captcha' => 'required|max:10'
         ];
     }

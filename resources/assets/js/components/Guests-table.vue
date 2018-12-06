@@ -33,6 +33,7 @@
             </span>
           </td>
           <td class="text-xs-left">{{ props.item.tickets }}</td>
+          <td class="text-xs-left">{{ props.item.drink_tickets }}</td>
           <td class="text-xs-left">{{ props.item.dietary }}</td>
           <td class="text-xs-left">{{ props.item.additional }}</td>
           <td class="text-xs-right">
@@ -98,7 +99,7 @@
             value: 'name'
           },
           {
-            text: 'Eamil',
+            text: 'Email',
             align: 'left',
             sortable: true,
             value: 'email'
@@ -110,19 +111,25 @@
             value: 'rsvp'
           },
           {
-            text: 'tickets',
+            text: 'Tickets',
             align: 'left',
             sortable: true,
             value: 'tickets'
           },
           {
-            text: 'dietary',
+            text: 'Drink Tickets',
+            align: 'left',
+            sortable: true,
+            value: 'tickets'
+          },
+          {
+            text: 'Allergies',
             align: 'left',
             sortable: true,
             value: 'dietary'
           },
           {
-            text: 'additional',
+            text: 'Seating Requests',
             align: 'left',
             sortable: true,
             value: 'additional'

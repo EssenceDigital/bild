@@ -19,8 +19,9 @@ class CreateGuestsTable extends Migration
             $table->string('email')->unique();
             $table->string('rsvp', 10);
             $table->integer('tickets')->nullable();
-            $table->string('dietary', 125)->nullable();
-            $table->string('additional', 125)->nullable();
+            $table->integer('drink_tickets')->nullable();
+            $table->string('dietary', 255)->nullable();
+            $table->string('additional', 255)->nullable();
             $table->timestamps();
         });
     }

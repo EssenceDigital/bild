@@ -4,10 +4,9 @@
       <v-layout row wrap>
         <v-flex xs12 lg6>
           <v-text-field
-            label="Name"
+            label="Name of individual / Company"
             v-model="form.name.value"
             :error-messages="form.name.errors"
-            hint="Personal or company name"
             persistent-hint
           ></v-text-field>
         </v-flex>
@@ -23,7 +22,7 @@
       </v-layout>
 
       <v-layout row wrap>
-        <v-flex xs12 lg6>
+        <v-flex xs12 lg4>
           <v-select
             :items="attending"
             label="RSVP"
@@ -31,16 +30,28 @@
             :error-messages="form.rsvp.errors"
           ></v-select>
         </v-flex>
-        <v-flex xs12 lg6>
+        <v-flex xs12 lg4>
           <v-text-field
             :disabled="form.rsvp.value == 'No'"
             type="number"
             value="0"
             min="1"
             max="50"
-            label="Number of tickets"
+            label="Event Tickets required"
             v-model="form.tickets.value"
             :error-messages="form.tickets.errors"
+          ></v-text-field>
+        </v-flex>
+        <v-flex xs12 lg4>
+          <v-text-field
+            :disabled="form.rsvp.value == 'No'"
+            type="number"
+            value="0"
+            min="1"
+            max="500"
+            label="Drink Tickets required"
+            v-model="form.drink_tickets.value"
+            :error-messages="form.drink_tickets.errors"
           ></v-text-field>
         </v-flex>
       </v-layout>
@@ -50,7 +61,7 @@
           <v-textarea
             :disabled="form.rsvp.value == 'No'"
             rows="3"
-            label="Dietary concerns"
+            label="Allergies (if any)"
             v-model="form.dietary.value"
             :error-messages="form.dietary.errors"
           ></v-textarea>
@@ -63,7 +74,7 @@
           <v-textarea
             :disabled="form.rsvp.value == 'No'"
             rows="3"
-            label="Additional requests"
+            label="Special request on seating arrangements"
             v-model="form.additional.value"
             :error-messages="form.additional.errors"
           ></v-textarea>
@@ -103,6 +114,21 @@
         <v-spacer></v-spacer>
       </v-layout>
 
+      <v-layout row>
+        <v-spacer></v-spacer>
+        <v-flex xs6>
+          <v-alert
+            :value="true"
+            color="info"
+            icon="contact_support"
+            outline
+            class="text-xs-center"
+          >
+              Questions: please email <a href="mailto:diana@bildlethbridge.ca" target="_top" class="grey--text">diana@bildlethbridge.ca</a>
+          </v-alert>
+        </v-flex>
+        <v-spacer></v-spacer>
+      </v-layout>
     </v-container>
   </v-slide-y-transition>
 
@@ -124,6 +150,7 @@
 					email: {value: '', errors: []},
 					rsvp: {value: '', errors: []},
 					tickets: {value: '', errors: []},
+					drink_tickets: {value: '', errors: []},
 					dietary: {value: '', errors: []},
 					additional: {value: '', errors: []},
           captcha: {value: '', errors: []}

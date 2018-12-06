@@ -9,7 +9,7 @@
                 align-center
                 justify-center
               >
-                <img src="images/bild-logo.png" alt="Vuetify.js" height="200">
+                <img src="images/bild-logo-leth.png" alt="Vuetify.js" height="200">
                 <h1 class="blue--text text--darken-4 mb-2 display-1 text-xs-center">Thank you!</h1>
                 <div class="grey--text text--darken-2 subheading mb-3 text-xs-center">We've recieved your response</div>
               </v-layout>
@@ -25,7 +25,7 @@
                 align-center
                 justify-center
               >
-                <img src="images/bild-logo.png" alt="Vuetify.js" height="200">
+                <img src="images/bild-logo-leth.png" alt="Vuetify.js" height="200">
                 <h1 class="blue--text text--darken-4 mb-2 display-1 text-xs-center">Awards of Excellence</h1>
                 <div class="grey--text text--darken-2 subheading mb-3 text-xs-center">Do you plan to attend?</div>
               </v-layout>
