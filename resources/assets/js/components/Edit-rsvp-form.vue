@@ -27,26 +27,53 @@
             :error-messages="form.rsvp.errors"
           ></v-select>
         </v-flex>
-        <v-flex xs12 lg6>
+      </v-layout>
+      <v-layout row>
+        <v-flex xs12 lg3>
           <v-text-field
             :disabled="form.rsvp.value == 'No'"
             type="number"
             value="0"
-            min="1"
+            min="0"
             max="50"
-            label="Number of tickets"
+            label="Individual tickets"
             v-model="form.tickets.value"
             :error-messages="form.tickets.errors"
           ></v-text-field>
         </v-flex>
+        <v-spacer></v-spacer>
+        <v-flex xs12 lg3>
+          <v-text-field
+            :disabled="form.rsvp.value == 'No'"
+            type="number"
+            value="0"
+            min="0"
+            max="50"
+            label="Table of eight"
+            v-model="form.tables.value"
+            :error-messages="form.tables.errors"
+          ></v-text-field>
+        </v-flex>
+        <v-spacer></v-spacer>
+        <v-flex xs12 lg3>
+          <v-text-field
+            :disabled="form.rsvp.value == 'No'"
+            type="number"
+            value="0"
+            min="0"
+            max="50"
+            label="Drink tickets"
+            v-model="form.drink_tickets.value"
+            :error-messages="form.drink_tickets.errors"
+          ></v-text-field>
+        </v-flex>
       </v-layout>
-
       <v-layout row wrap>
         <v-flex xs12>
           <v-textarea
             :disabled="form.rsvp.value == 'No'"
             rows="3"
-            label="Dietary concerns"
+            label="Allergies (if any)"
             v-model="form.dietary.value"
             :error-messages="form.dietary.errors"
           ></v-textarea>
@@ -59,7 +86,7 @@
           <v-textarea
             :disabled="form.rsvp.value == 'No'"
             rows="3"
-            label="Additional requests"
+            label="Special request on seating arrangements"
             v-model="form.additional.value"
             :error-messages="form.additional.errors"
           ></v-textarea>
@@ -99,14 +126,16 @@
 		data (){
 			return {
 				form: {
-					id: {value: '', errors: []},
+          id: {value: '', errors: []},
 					name: {value: '', errors: []},
 					email: {value: '', errors: []},
 					rsvp: {value: '', errors: []},
 					tickets: {value: '', errors: []},
+					tables: {value: '', errors: []},
+					drink_tickets: {value: '', errors: []},
 					dietary: {value: '', errors: []},
 					additional: {value: '', errors: []}
-				},
+        },
         attending: [
           { text: 'Yes', value: 'Yes' },
           { text: 'No', value: 'No' }

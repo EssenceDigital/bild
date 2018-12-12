@@ -33,6 +33,7 @@
             </span>
           </td>
           <td class="text-xs-left">{{ props.item.tickets }}</td>
+          <td class="text-xs-left">{{ props.item.tables }}</td>
           <td class="text-xs-left">{{ props.item.drink_tickets }}</td>
           <td class="text-xs-left">{{ props.item.dietary }}</td>
           <td class="text-xs-left">{{ props.item.additional }}</td>
@@ -115,6 +116,12 @@
             align: 'left',
             sortable: true,
             value: 'tickets'
+          },
+          {
+            text: 'Tables (8)',
+            align: 'left',
+            sortable: true,
+            value: 'tables'
           },
           {
             text: 'Drink Tickets',

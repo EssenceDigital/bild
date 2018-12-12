@@ -56465,6 +56465,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -56498,6 +56499,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         align: 'left',
         sortable: true,
         value: 'tickets'
+      }, {
+        text: 'Tables (8)',
+        align: 'left',
+        sortable: true,
+        value: 'tables'
       }, {
         text: 'Drink Tickets',
         align: 'left',
@@ -56704,6 +56710,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -56719,6 +56752,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				email: { value: '', errors: [] },
 				rsvp: { value: '', errors: [] },
 				tickets: { value: '', errors: [] },
+				tables: { value: '', errors: [] },
+				drink_tickets: { value: '', errors: [] },
 				dietary: { value: '', errors: [] },
 				additional: { value: '', errors: [] }
 			},
@@ -56877,20 +56912,27 @@ var render = function() {
                       })
                     ],
                     1
-                  ),
-                  _vm._v(" "),
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-layout",
+                { attrs: { row: "" } },
+                [
                   _c(
                     "v-flex",
-                    { attrs: { xs12: "", lg6: "" } },
+                    { attrs: { xs12: "", lg3: "" } },
                     [
                       _c("v-text-field", {
                         attrs: {
                           disabled: _vm.form.rsvp.value == "No",
                           type: "number",
                           value: "0",
-                          min: "1",
+                          min: "0",
                           max: "50",
-                          label: "Number of tickets",
+                          label: "Individual tickets",
                           "error-messages": _vm.form.tickets.errors
                         },
                         model: {
@@ -56899,6 +56941,62 @@ var render = function() {
                             _vm.$set(_vm.form.tickets, "value", $$v)
                           },
                           expression: "form.tickets.value"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "", lg3: "" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          disabled: _vm.form.rsvp.value == "No",
+                          type: "number",
+                          value: "0",
+                          min: "0",
+                          max: "50",
+                          label: "Table of eight",
+                          "error-messages": _vm.form.tables.errors
+                        },
+                        model: {
+                          value: _vm.form.tables.value,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form.tables, "value", $$v)
+                          },
+                          expression: "form.tables.value"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "", lg3: "" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          disabled: _vm.form.rsvp.value == "No",
+                          type: "number",
+                          value: "0",
+                          min: "0",
+                          max: "50",
+                          label: "Drink tickets",
+                          "error-messages": _vm.form.drink_tickets.errors
+                        },
+                        model: {
+                          value: _vm.form.drink_tickets.value,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form.drink_tickets, "value", $$v)
+                          },
+                          expression: "form.drink_tickets.value"
                         }
                       })
                     ],
@@ -56920,7 +57018,7 @@ var render = function() {
                         attrs: {
                           disabled: _vm.form.rsvp.value == "No",
                           rows: "3",
-                          label: "Dietary concerns",
+                          label: "Allergies (if any)",
                           "error-messages": _vm.form.dietary.errors
                         },
                         model: {
@@ -56950,7 +57048,7 @@ var render = function() {
                         attrs: {
                           disabled: _vm.form.rsvp.value == "No",
                           rows: "3",
-                          label: "Additional requests",
+                          label: "Special request on seating arrangements",
                           "error-messages": _vm.form.additional.errors
                         },
                         model: {
@@ -57114,6 +57212,10 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", { staticClass: "text-xs-left" }, [
                     _vm._v(_vm._s(props.item.tickets))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "text-xs-left" }, [
+                    _vm._v(_vm._s(props.item.tables))
                   ]),
                   _vm._v(" "),
                   _c("td", { staticClass: "text-xs-left" }, [
@@ -58587,6 +58689,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -58602,6 +58724,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				email: { value: '', errors: [] },
 				rsvp: { value: '', errors: [] },
 				tickets: { value: '', errors: [] },
+				tables: { value: '', errors: [] },
 				drink_tickets: { value: '', errors: [] },
 				dietary: { value: '', errors: [] },
 				additional: { value: '', errors: [] },
@@ -58739,7 +58862,7 @@ var render = function() {
             [
               _c(
                 "v-flex",
-                { attrs: { xs12: "", lg4: "" } },
+                { attrs: { xs12: "", lg6: "" } },
                 [
                   _c("v-select", {
                     attrs: {
@@ -58757,20 +58880,38 @@ var render = function() {
                   })
                 ],
                 1
-              ),
-              _vm._v(" "),
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "" } },
+            [
+              _c("v-flex", { staticClass: "pb-0", attrs: { xs12: "" } }, [
+                _c("strong", [_vm._v("Individual tickets or table of eight?")])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "" } },
+            [
               _c(
                 "v-flex",
-                { attrs: { xs12: "", lg4: "" } },
+                { attrs: { xs12: "", lg6: "" } },
                 [
                   _c("v-text-field", {
                     attrs: {
                       disabled: _vm.form.rsvp.value == "No",
                       type: "number",
                       value: "0",
-                      min: "1",
+                      min: "0",
                       max: "50",
-                      label: "Event Tickets required",
+                      label: "Individual Tickets",
                       "error-messages": _vm.form.tickets.errors
                     },
                     model: {
@@ -58787,16 +58928,49 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "v-flex",
-                { attrs: { xs12: "", lg4: "" } },
+                { attrs: { xs12: "", lg6: "" } },
                 [
                   _c("v-text-field", {
                     attrs: {
                       disabled: _vm.form.rsvp.value == "No",
                       type: "number",
                       value: "0",
-                      min: "1",
+                      min: "0",
                       max: "500",
-                      label: "Drink Tickets required",
+                      label: "Table of Eight",
+                      "error-messages": _vm.form.tables.errors
+                    },
+                    model: {
+                      value: _vm.form.tables.value,
+                      callback: function($$v) {
+                        _vm.$set(_vm.form.tables, "value", $$v)
+                      },
+                      expression: "form.tables.value"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", lg6: "" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      disabled: _vm.form.rsvp.value == "No",
+                      type: "number",
+                      value: "0",
+                      min: "0",
+                      max: "500",
+                      label: "Drink Tickets",
                       "error-messages": _vm.form.drink_tickets.errors
                     },
                     model: {

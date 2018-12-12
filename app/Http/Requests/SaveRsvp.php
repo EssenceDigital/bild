@@ -28,6 +28,7 @@ class SaveRsvp extends FormRequest
             'email' => 'required|email',
             'rsvp' => 'required|max:10',
             'tickets' => 'max:100',
+            'tables' => 'max:100',
             'drink_tickets' => 'max:100',
             'dietary' => 'max:255',
             'additional' => 'max:255',

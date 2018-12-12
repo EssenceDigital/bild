@@ -22,7 +22,7 @@
       </v-layout>
 
       <v-layout row wrap>
-        <v-flex xs12 lg4>
+        <v-flex xs12 lg6>
           <v-select
             :items="attending"
             label="RSVP"
@@ -30,32 +30,52 @@
             :error-messages="form.rsvp.errors"
           ></v-select>
         </v-flex>
-        <v-flex xs12 lg4>
+      </v-layout>
+      <v-layout row>
+        <v-flex xs12 class="pb-0">
+          <strong>Individual tickets or table of eight?</strong>
+        </v-flex>
+      </v-layout>
+      <v-layout row>
+        <v-flex xs12 lg6>
           <v-text-field
             :disabled="form.rsvp.value == 'No'"
             type="number"
             value="0"
-            min="1"
+            min="0"
             max="50"
-            label="Event Tickets required"
+            label="Individual Tickets"
             v-model="form.tickets.value"
             :error-messages="form.tickets.errors"
           ></v-text-field>
         </v-flex>
-        <v-flex xs12 lg4>
+        <v-flex xs12 lg6>
           <v-text-field
             :disabled="form.rsvp.value == 'No'"
             type="number"
             value="0"
-            min="1"
+            min="0"
             max="500"
-            label="Drink Tickets required"
+            label="Table of Eight"
+            v-model="form.tables.value"
+            :error-messages="form.tables.errors"
+          ></v-text-field>
+        </v-flex>
+      </v-layout>
+      <v-layout row wrap>
+        <v-flex xs12 lg6>
+          <v-text-field
+            :disabled="form.rsvp.value == 'No'"
+            type="number"
+            value="0"
+            min="0"
+            max="500"
+            label="Drink Tickets"
             v-model="form.drink_tickets.value"
             :error-messages="form.drink_tickets.errors"
           ></v-text-field>
         </v-flex>
       </v-layout>
-
       <v-layout row wrap>
         <v-flex xs12>
           <v-textarea
@@ -150,6 +170,7 @@
 					email: {value: '', errors: []},
 					rsvp: {value: '', errors: []},
 					tickets: {value: '', errors: []},
+					tables: {value: '', errors: []},
 					drink_tickets: {value: '', errors: []},
 					dietary: {value: '', errors: []},
 					additional: {value: '', errors: []},

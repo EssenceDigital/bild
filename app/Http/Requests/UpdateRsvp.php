@@ -28,6 +28,7 @@ class UpdateRsvp extends FormRequest
             'email' => 'required|email',
             'rsvp' => 'required|max:10',
             'tickets' => 'max:10',
+            'tables' => 'max:10',
             'dietary' => 'max:125',
             'additional' => 'max:125'
         ];
