@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Exports\GuestsExport;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Guest;
 use App\Http\Requests\UpdateRsvp;
 
@@ -50,5 +52,10 @@ class GuestsController extends Controller
           'rsvp' => $guest
       ], 200);
 
+    }
+
+    public function export()
+    {
+      return Excel::download(new GuestsExport, 'bild-rsvps.xlsx');
     }
 }

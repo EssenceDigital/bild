@@ -9,28 +9,28 @@
 		</div>
 		<div slot="content">
 
-			<guests-table></guests-table>
+				<guests-table></guests-table>
 
-		</div><!--/ Content slot -->
-	</layout>
-</template>
+			</div><!--/ Content slot -->
+		</layout>
+	</template>
 
-<script>
-	import Layout from './_Layout';
-	import GuestsTable from './../components/Guests-table';
+	<script>
+		import Layout from './_Layout';
+		import GuestsTable from './../components/Guests-table';
 
-	export default{
-		data () {
-			return {
+		export default{
+			data () {
+				return {
+
+				}
+			},
+			components: {
+				'layout': Layout,
+				'guests-table': GuestsTable
+			},
+			methods: {
 
 			}
-		},
-		components: {
-			'layout': Layout,
-			'guests-table': GuestsTable
-		},
-		methods: {
-
 		}
-	}
-</script>
+	</script>

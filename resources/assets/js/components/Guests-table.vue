@@ -12,7 +12,15 @@
         v-model="search"
       ></v-text-field>
     </v-card-title>
-
+    <v-layout row>
+      <v-flex xs2>
+        <v-btn
+          @click="exportGuests"
+          >
+            Export
+          </v-btn>
+        </v-flex>
+      </v-layout>
     <!-- Table -->
     <v-data-table
       :headers="headers"
@@ -170,6 +178,21 @@
         this.guests.splice(index, 1);
         // Re-add updated payload at same index
         return this.guests.splice(index, 0, rsvp);
+      },
+      exportGuests (){
+        axios({
+          url: '/guests/export',
+          method: 'GET',
+          responseType: 'blob', // important
+        }).then((response) => {
+          console.log(response);
+          const url = window.URL.createObjectURL(new Blob([response.data]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'rsvps.xlsx'); //or any other extension
+            document.body.appendChild(link);
+            link.click();
+        });
       }
     },
 		created (){

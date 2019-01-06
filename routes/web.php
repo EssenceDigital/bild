@@ -19,3 +19,4 @@ Route::get('/app', 'DashboardController@app');
 Route::get('/guests/all', 'GuestsController@all');
 Route::post('/rsvp/send', 'RsvpController@send');
 Route::post('/rsvp/update', 'GuestsController@updateRsvp');
+Route::get('/guests/export', 'GuestsController@export');

@@ -56466,6 +56466,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -56548,6 +56556,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.guests.splice(index, 1);
       // Re-add updated payload at same index
       return this.guests.splice(index, 0, rsvp);
+    },
+    exportGuests: function exportGuests() {
+      __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+        url: '/guests/export',
+        method: 'GET',
+        responseType: 'blob' // important
+      }).then(function (response) {
+        console.log(response);
+        var url = window.URL.createObjectURL(new Blob([response.data]));
+        var link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'rsvps.xlsx'); //or any other extension
+        document.body.appendChild(link);
+        link.click();
+      });
     }
   },
   created: function created() {
@@ -57148,6 +57171,24 @@ var render = function() {
               expression: "search"
             }
           })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-layout",
+        { attrs: { row: "" } },
+        [
+          _c(
+            "v-flex",
+            { attrs: { xs2: "" } },
+            [
+              _c("v-btn", { on: { click: _vm.exportGuests } }, [
+                _vm._v("\n           Export\n         ")
+              ])
+            ],
+            1
+          )
         ],
         1
       ),
